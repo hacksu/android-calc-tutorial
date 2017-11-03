@@ -3,11 +3,12 @@ package com.hyland.calculatoroutline;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.hyland.calculatorfull.R;
 
-public class CalculatorMainActivity extends AppCompatActivity implements View.OnClickListener
+public class CalculatorMainActivity extends AppCompatActivity
 {
     private FunctionType _currentFunctionType = FunctionType.NONE;
     private String _previousTotal = "0";
@@ -24,7 +25,7 @@ public class CalculatorMainActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_main);
 
-        if(savedInstanceState != null)
+        if (savedInstanceState != null)
         {
 
         }
@@ -72,7 +73,7 @@ public class CalculatorMainActivity extends AppCompatActivity implements View.On
 
     private void setupClear()
     {
-        
+
     }
 
     private void setupTotal()
@@ -82,13 +83,13 @@ public class CalculatorMainActivity extends AppCompatActivity implements View.On
 
     private String getDisplayValue()
     {
-        TextView displayView = (TextView)findViewById(R.id.text_view_display);
+        TextView displayView = (TextView) findViewById(R.id.text_view_display);
         return displayView.getText().toString();
     }
 
     private void setDisplayValue(String value)
     {
-        TextView displayView = (TextView)findViewById(R.id.text_view_display);
+        TextView displayView = (TextView) findViewById(R.id.text_view_display);
         displayView.setText(value);
     }
 
@@ -102,9 +103,19 @@ public class CalculatorMainActivity extends AppCompatActivity implements View.On
 
     }
 
-    @Override
-    public void onClick(View view)
+    private class NumberClickListener implements View.OnClickListener
     {
+        private int _buttonValue;
 
+        public NumberClickListener(int buttonValue)
+        {
+
+        }
+
+        @Override
+        public void onClick(View view)
+        {
+
+        }
     }
 }
